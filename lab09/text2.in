@@ -1,0 +1,47 @@
+porta equ 0x02
+rjmp main
+
+main:
+    ldi r18, 0x11111111
+    out 0x01, r18
+
+    sbi porta, 0
+    cbi porta, 1
+    cbi porta, 2
+    cbi porta, 3
+    cbi porta, 4
+    cbi porta, 5
+    cbi porta, 6
+    sbi porta, 7
+
+    cbi porta, 0
+    sbi porta, 1
+    sbi porta, 6
+    cbi porta, 7
+
+    cbi porta, 1
+    sbi porta, 2
+    sbi porta, 5
+    cbi porta, 6
+
+    cbi porta, 2
+    sbi porta, 3
+    sbi porta, 4
+    cbi porta, 5
+
+    sbi porta, 2
+    cbi porta, 3
+    cbi porta, 4
+    sbi porta, 5
+
+    sbi porta, 1
+    cbi porta, 2
+    cbi porta, 5
+    sbi porta, 6
+
+    sbi porta, 0
+    cbi porta, 1
+    cbi porta, 6
+    sbi porta, 7
+
+    

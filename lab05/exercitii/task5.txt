@@ -1,0 +1,22 @@
+		rjmp main
+	func1:
+		pop R18 ; scoate adresa de return de pe stiva
+		pop R19 ; scoate adresa de return de pe stiva
+		pop R17 ; scoate parametrul functiei(R20) de pe stiva
+		ldi R16, 1 ; pune in R16 valoarea 1
+		ldi R20, 0 ; pune in R20 valoarea 0
+	loop:
+		add R20, R17 ; R20 = R20 + R17
+		sub R17, R16 ; R17 = R17 - R16
+		brne loop ; branch if not equal jump loop label
+		push R19  ; pune pe stiva inapoi adresa de return
+		push R18 ; pune pe stiva inapoi adresa de return
+		ret
+	main:
+		ldi R20, 13 ; pune in R20 valoarea 13
+		sts 65, R20 ; pune la adresa 65 ce e in R20
+		ldi R20, 39 ; pune in R20 valoarea 39
+		lds R20, 65 ; pune in R20 valoarea  de la adresa 65
+		push R20    ; pune R20 pe stiva
+		rcall func1 ; apeleaza func1
+		nop

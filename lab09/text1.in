@@ -1,0 +1,14 @@
+rjmp main
+
+main:
+    ldi r18, 0x11111111
+    out 0x01, r18
+
+    ldi r18, 0x00000000
+    out 0x05, r18
+    
+loop:
+    in r16, 0x04
+    out 0x02, r16
+    rjmp loop
+    

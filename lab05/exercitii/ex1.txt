@@ -1,0 +1,54 @@
+/*	 ldi 	r20, 7 		*/
+		0:		value = 16'b1110000001000111;
+		/*	 rcall 	foo 		*/
+		1:		value = 16'b1101000000000000;
+		/*	 ldi 	r20, 42 		*/
+		2:		value = 16'b1110001001001010;
+		/*	 ret 	 		*/
+		3:		value = 16'b1001010100001000;
+		default:		value = 16'b0000000000000000;
+		
+		
+		
+		 
+		
+		  ldi r20, 42
+		 ret
+		 
+		 
+		 ldi r20, 7
+		 rcall foo
+		 
+		 
+		 /*	 rjmp 	main 		*/
+		0:		value = 16'b1100000000000010;
+		/*	 ldi 	r20, 42 		*/
+		1:		value = 16'b1110001001001010;
+		/*	 ret 	 		*/
+		2:		value = 16'b1001010100001000;
+		/*	 ldi 	r20, 7 		*/
+		3:		value = 16'b1110000001000111;
+		/*	 rcall 	foo 		*/
+		4:		value = 16'b1101111111111100;
+		default:		value = 16'b0000000000000000;
+		
+		
+		test  anterior:
+		/* ldi 	r16, 5 		*/
+			0:		value = 16'b1110000000000101;
+			/*	 rjmp 	main_function 	*/	
+			1:		value = 16'b1100000000000010;
+			/*	 ldi 	r17, 15 		*/
+			2:		value = 16'b1110000000011111;
+			/*	 ret 	 		*/
+			3:		value = 16'b1001010100001000;
+			/*	 ldi 	r17, 10 	*/	
+			4:		value = 16'b1110000000011010;
+			/*	 rcall 	first_function */		
+			5:		value = 16'b1101111111111100;
+			/*	 ldi 	r18, 20 		*/
+			6:		value = 16'b1110000100100100;
+			default:		value = 16'b0000000000000000;
+			
+			
+		  

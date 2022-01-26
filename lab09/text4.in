@@ -1,0 +1,62 @@
+ DDRA        equ 0x01
+    PORTA       equ 0x02
+    TCCR0A      equ 0x19
+    TCCR0B      equ 0x18
+    TIMSK       equ 0x26
+    OCR0A       equ 0x16
+ 
+    rjmp        main            ; Adresa 0x0000
+    reti                        ; Adresa 0x0001
+    reti                        ; Adresa 0x0002
+    reti                        ; Adresa 0x0003
+    reti                        ; Adresa 0x0004
+    reti                        ; Adresa 0x0005
+    reti                        ; Adresa 0x0006
+    reti                        ; Adresa 0x0007
+    reti                        ; Adresa 0x0008
+    rjmp        TIM0_COMPA_ISR  ; Adresa 0x0009
+    reti                        ; Adresa 0x000A
+    reti                        ; Adresa 0x000B
+    reti                        ; Adresa 0x000C
+    reti                        ; Adresa 0x000D
+    reti                        ; Adresa 0x000E
+    reti                        ; Adresa 0x000F
+    reti                        ; Adresa 0x0010
+ 
+TIM0_COMPA_ISR:
+    ; TODO 4: Schimbați (toggle) starea pinului PA0.
+    in r16, PORTA
+    ldi r17, 1
+    sub r17, r16
+    ldi r18, 0x11111110
+    and r16, r18
+    ldi r18, 0x00000001
+    and r17, r18
+    add r16, r17    
+    out PORTA, r16
+    reti
+
+main:
+    ; TODO 4: Configurați pinul PA0 ca și ieșire.
+    ldi r16, 1
+    out DDRA, r16
+ 
+    ; TODO 4: Porniți un timer care să genereze o întrerupere de comparație pe canalul A. Puneți
+    ; valoarea 42 ca valoare de comparație pentru canalul A.
+    ldi r16, 42
+    out OCR0A, r16
+    ldi r16, 0x00000010
+    out TCCR0A, r16
+    ldi r16, 0x00000001
+    out TCCR0B, r16
+    ldi r16, 0x00000010
+    out TIMSK, r16
+ 
+    ; TODO 4: Activați întreruperile global.
+    sei
+ 
+    ; Deși programul pare să stea într-o buclă infinită, ar trebui să vedem că totuși starea
+    ; pinului PA0 se schimbă.
+    loop:
+        rjmp loop
+    

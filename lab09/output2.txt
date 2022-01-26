@@ -1,0 +1,71 @@
+		/*	 rjmp 	main 		*/
+		0:		value = 16'b1100000000000000;
+		/*	 ldi 	r18, 0x11111111 		*/
+		1:		value = 16'b1110000100100001;
+		/*	 out 	0x01, r18 		*/
+		2:		value = 16'b1011100100100001;
+		/*	 sbi 	porta, 0 		*/
+		3:		value = 16'b1001101000010000;
+		/*	 cbi 	porta, 1 		*/
+		4:		value = 16'b1001100000010001;
+		/*	 cbi 	porta, 2 		*/
+		5:		value = 16'b1001100000010010;
+		/*	 cbi 	porta, 3 		*/
+		6:		value = 16'b1001100000010011;
+		/*	 cbi 	porta, 4 		*/
+		7:		value = 16'b1001100000010100;
+		/*	 cbi 	porta, 5 		*/
+		8:		value = 16'b1001100000010101;
+		/*	 cbi 	porta, 6 		*/
+		9:		value = 16'b1001100000010110;
+		/*	 sbi 	porta, 7 		*/
+		10:		value = 16'b1001101000010111;
+		/*	 cbi 	porta, 0 		*/
+		11:		value = 16'b1001100000010000;
+		/*	 sbi 	porta, 1 		*/
+		12:		value = 16'b1001101000010001;
+		/*	 sbi 	porta, 6 		*/
+		13:		value = 16'b1001101000010110;
+		/*	 cbi 	porta, 7 		*/
+		14:		value = 16'b1001100000010111;
+		/*	 cbi 	porta, 1 		*/
+		15:		value = 16'b1001100000010001;
+		/*	 sbi 	porta, 2 		*/
+		16:		value = 16'b1001101000010010;
+		/*	 sbi 	porta, 5 		*/
+		17:		value = 16'b1001101000010101;
+		/*	 cbi 	porta, 6 		*/
+		18:		value = 16'b1001100000010110;
+		/*	 cbi 	porta, 2 		*/
+		19:		value = 16'b1001100000010010;
+		/*	 sbi 	porta, 3 		*/
+		20:		value = 16'b1001101000010011;
+		/*	 sbi 	porta, 4 		*/
+		21:		value = 16'b1001101000010100;
+		/*	 cbi 	porta, 5 		*/
+		22:		value = 16'b1001100000010101;
+		/*	 sbi 	porta, 2 		*/
+		23:		value = 16'b1001101000010010;
+		/*	 cbi 	porta, 3 		*/
+		24:		value = 16'b1001100000010011;
+		/*	 cbi 	porta, 4 		*/
+		25:		value = 16'b1001100000010100;
+		/*	 sbi 	porta, 5 		*/
+		26:		value = 16'b1001101000010101;
+		/*	 sbi 	porta, 1 		*/
+		27:		value = 16'b1001101000010001;
+		/*	 cbi 	porta, 2 		*/
+		28:		value = 16'b1001100000010010;
+		/*	 cbi 	porta, 5 		*/
+		29:		value = 16'b1001100000010101;
+		/*	 sbi 	porta, 6 		*/
+		30:		value = 16'b1001101000010110;
+		/*	 sbi 	porta, 0 		*/
+		31:		value = 16'b1001101000010000;
+		/*	 cbi 	porta, 1 		*/
+		32:		value = 16'b1001100000010001;
+		/*	 cbi 	porta, 6 		*/
+		33:		value = 16'b1001100000010110;
+		/*	 sbi 	porta, 7 		*/
+		34:		value = 16'b1001101000010111;
+		default:		value = 16'b0000000000000000;

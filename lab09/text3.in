@@ -1,0 +1,14 @@
+tccr0a equ 0x19
+tccr0b equ 0x18
+ocr0a equ 0x16
+
+rjmp main
+
+main:
+    ldi r16, 0x10000011
+    out tccr0a, r16
+    ldi r16, 0x00000001
+    out tccr0b, r16
+    ldi r16, 63
+    out ocr0a, r16
+    
